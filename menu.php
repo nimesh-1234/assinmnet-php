@@ -17,6 +17,11 @@ $select_products = mysqli_query($conn, $query);
 </head>
 
 <body class="menu-body">
+
+    <div class="menu-login">
+        <a href="login.php" class="login-btn">Login</a>
+    </div>
+
     <h1 class="title">Our Menu</h1>
 
     <div class="menu">

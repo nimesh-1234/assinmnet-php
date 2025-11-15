@@ -146,6 +146,22 @@ html {
   background: var(--bg-color);
 }
 
+.menu-login {
+  width: 100%;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.login-btn {
+  padding: 10px 20px;
+  background: var(--green);
+  color: var(--white);
+  font-size: 16px;
+  border-radius: 8px;
+}
+
 .title {
   text-align: center;
   font-size: 40px;
@@ -183,7 +199,7 @@ html {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 5px;
+  border-radius: 6px;
 }
 
 .card .card-name {
