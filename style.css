@@ -142,18 +142,34 @@ html {
 
 /* menu page */
 .menu-body {
-  height: 100vh;
-  display: flex;
+  padding: 20px;
   background: var(--bg-color);
 }
 
+.title {
+  text-align: center;
+  font-size: 40px;
+  color: var(--black);
+  margin-bottom: 20px;
+}
+
+.menu {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
+  padding: 20px;
+}
+
 .card {
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   padding: 10px;
   background: var(--white);
   border-radius: 30px;
   box-shadow: var(--box-shadow);
-  transition: 4s ease;
 }
 
 .card .card-img {

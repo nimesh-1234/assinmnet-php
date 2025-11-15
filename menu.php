@@ -19,13 +19,15 @@ $select_products = mysqli_query($conn, $query);
 <body class="menu-body">
     <h1 class="title">Our Menu</h1>
 
+    <div class="menu">
+
 <?php
 if(mysqli_num_rows($select_products) > 0){
     while($row = mysqli_fetch_assoc($select_products)){
 
 ?>
 
-    <div class="menu">
+    
         <div class="card">
 
         <div class="card-img">
