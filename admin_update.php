@@ -26,10 +26,10 @@ if(isset($_POST['update'])){
 
         if($upload){
             move_uploaded_file($product_image_tmp_name, $product_image_folder);
-            $message[] = 'new product added successfully';
+            $message[] = 'product update successfully';
             header('Location: admin_page.php');
         }else{
-            $message[] = 'could not add the product';
+            $message[] = 'not add the product';
         }
     }
 };

@@ -26,7 +26,7 @@ if(isset($_POST['add_product'])){
             move_uploaded_file($product_image_tmp_name, $product_image_folder);
             $message[] = 'new product added successfully';
         }else{
-            $message[] = 'could not add the product';
+            $message[] = 'not add the product';
         }
     }
 };
@@ -63,15 +63,26 @@ if(isset($message)){
 ?>
 
 <div class="container">
+
+<div class="menu-btn">
+    <a href="menu.php" class="btn">view menu</a>
+</div>
+
     <div class="admin_form_container">
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data">
             <h3>add a new product</h3>
+
             <input type="text" placeholder="enter product Name" name="product_name" class="box">
+
             <input type="text" placeholder="enter product price" name="product_price" class="box">
+
             <input type="text" placeholder="enter product description" name="product_description" class="box">
+
             <input type="file" accept="image/png, image/jpg, image/jpeg" name="product_image" class="box">
+
             <input type="submit" value="add product" name="add_product" class="btn">
         </form>
+
     </div>
 
     <?php 
@@ -98,15 +109,21 @@ if(isset($message)){
 
         <tr>
         <td><img src="uploaded_img/<?php echo $row['image']; ?>" height="100" alt=""></td>
+
         <td><?php echo $row['name']; ?></td>
+
         <td><?php echo $row['price']; ?></td>
+
         <td><?php echo $row['description']; ?></td>
+
         <td class="action-buttons">
             <a href="admin_update.php?update=<?php echo $row['id']; ?>" class="btn">update</a>
             <a href="admin_page.php?delete=<?php echo $row['id']; ?>" class="btn">delete</a>
         </td>
+
         </tr>
-        <?php }; ?>
+        <?php }; 
+        ?>
         
         </table>
     </div>
