@@ -50,7 +50,7 @@ if(isset($_GET['delete'])){
     <title>Admin Page</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="admin_page_body">
 
 <?php 
 
@@ -117,6 +117,7 @@ if(isset($message)){
         <td><?php echo $row['description']; ?></td>
 
         <td class="action-buttons">
+
             <a href="admin_update.php?update=<?php echo $row['id']; ?>" class="btn">update</a>
             <a href="admin_page.php?delete=<?php echo $row['id']; ?>" class="btn">delete</a>
         </td>

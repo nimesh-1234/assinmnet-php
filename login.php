@@ -51,7 +51,7 @@ if(isset($_POST['submit'])){
 
             <input type="password" name="password" placeholder="Password" class="input" required><br><br>
 
-            <input type="submit" value="Login" class="login-btn" name="submit">
+            <input type="submit" value="Login" class="login-page-btn" name="submit">
 
         </form>
     </div>

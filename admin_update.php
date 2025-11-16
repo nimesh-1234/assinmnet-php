@@ -14,12 +14,32 @@ if(isset($_POST['update'])){
     $product_image_tmp_name = $_FILES['product_image']['tmp_name'];
     $product_image_folder = 'uploaded_img/'.$product_image;
 
+    //old data 
+
+    $select_old = mysqli_query($conn, "SELECT * FROM products WHERE id='$id'");
+    $old = mysqli_fetch_assoc($select_old);
+
     
-    if(empty($product_name) || empty($product_price) || empty($product_description) || empty($product_image)){
-        $message[] = 'please fill out all';
-    }else{
+    if(empty($product_name)){
+        $product_name = $old['name'];
+    }
+
+    if(empty($product_price)){
+        $product_price = $old['price'];
+    }
+
+    if(empty($product_description)){
+        $product_description = $old['description'];
+    }
+
+    
+    if(empty($product_image)){
+        $product_image = $old['image'];
+    }
+    
         
-        
+    //update eka
+    
         $update = "UPDATE products SET name='$product_name', price='$product_price', description='$product_description', image='$product_image' WHERE id='$id'";
         
         $upload = mysqli_query($conn, $update);
@@ -31,7 +51,7 @@ if(isset($_POST['update'])){
         }else{
             $message[] = 'not add the product';
         }
-    }
+    
 };
 
 ?>
@@ -69,7 +89,7 @@ if(isset($_POST['update'])){
     
     ?>
 
-        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data">
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>?update=<?php echo $id; ?>" method="POST" enctype="multipart/form-data">
 
             <h3>update product</h3>
             <input type="text" placeholder="enter product Name"  value="<?php echo $row['name']; ?>" name="product_name" class="box">

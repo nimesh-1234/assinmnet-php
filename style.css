@@ -22,7 +22,9 @@ html {
   font-size: 62.5%;
   overflow-x: hidden;
 }
-
+.admin_page_body {
+  background-color: lightcyan;
+}
 .btn {
   margin-top: 10px;
   width: auto;
@@ -278,4 +280,16 @@ html {
   font-size: 16px;
   border: var(--border);
   border-radius: 5px;
+}
+
+.login-page-btn {
+  background-color: #2ecc71;
+  width: 100px;
+  margin-left: 100px;
+}
+
+.login-page-btn:hover {
+  background: var(--black);
+  color: var(--white);
+  cursor: pointer;
 }

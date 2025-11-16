@@ -22,7 +22,7 @@ $select_products = mysqli_query($conn, $query);
         <a href="login.php" class="login-btn">Login</a>
     </div>
 
-    <h1 class="title">Our Menu</h1>
+    <h1 class="title">OUR MENU</h1>
 
     <div class="menu">
 
@@ -44,7 +44,7 @@ if(mysqli_num_rows($select_products) > 0){
         </div>
 
          <div class="card-price">
-            <p>$<?php echo $row['price']; ?></p>
+            <p>Rs.<?php echo $row['price']; ?></p>
         </div>
 
         <div class="card-desc">
