@@ -1,25 +1,32 @@
-<?php 
+<?php  
+include 'config.php';
 
 if(isset($_POST['submit'])){
 
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    
-    $admin_email = "admin@gmail.com";
-    $admin_pass= "123";
+    //select
+    $query = "SELECT * FROM admins WHERE username='$username' LIMIT 1";
+    $result = mysqli_query($conn, $query);
 
-    if($username === $admin_email && $password === $admin_pass){
-       
-        header("Location: admin_page.php");
-        exit();
-    } else {
-        echo "<script>alert('Invalid username or password');</script>";
-        header("Location: menu.php");
-        exit();
-    }
+    if(mysqli_num_rows($result) > 0){
+
+        $row = mysqli_fetch_assoc($result);
+         $hash_password = $row['password'];
+
+        // Hash 
+        if(password_verify($password, $hash_password)){
+            header("Location: admin_page.php");
+            exit();
+        } else {
+            echo "<script>alert('Invalid user name or password');</script>";
+            header("Location: menu.php");
+            exit();
+        }
+
+    } 
 }
-
 ?>
 
 
